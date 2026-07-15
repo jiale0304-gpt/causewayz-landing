@@ -184,11 +184,23 @@ section{padding:72px 0}
 .airbnb .note{font-size:.82rem;opacity:.85}
 .airbnb .ph{aspect-ratio:4/3;border-radius:var(--radius);background:repeating-linear-gradient(45deg,rgba(255,255,255,.08),rgba(255,255,255,.08) 14px,rgba(255,255,255,.04) 14px,rgba(255,255,255,.04) 28px);color:rgba(255,255,255,.65)}
 
-/* ---------- Developer ---------- */
-.dev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
-.dev-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;text-align:center}
-.dev-card .num{font-family:var(--display);font-weight:800;font-size:2rem;color:var(--ink)}
-.dev-card .lbl{font-size:.88rem;margin-top:4px}
+/* ---------- Developer (dark awards showcase) ---------- */
+.dev{background:
+  radial-gradient(900px 400px at 80% 0%, rgba(232,163,61,.12), transparent 60%),
+  linear-gradient(160deg,#0E1C30,#16283F);color:var(--mist)}
+.dev .section-title{color:#fff}
+.dev .section-sub{color:var(--mist)}
+.dev-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}
+.dstat{padding:26px 18px;text-align:center;border-right:1px solid rgba(255,255,255,.14)}
+.dstat:last-child{border-right:none}
+.dstat .num{font-family:var(--display);font-weight:800;font-size:2.3rem;color:#fff;line-height:1}
+.dstat .lbl{font-size:.82rem;margin-top:8px;color:var(--mist)}
+.dev-awards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.award{background:rgba(255,255,255,.05);border:1px solid rgba(232,163,61,.35);border-radius:var(--radius);padding:26px 20px;text-align:center;position:relative}
+.award::before{content:"";position:absolute;top:0;left:20%;right:20%;height:2px;background:linear-gradient(90deg,transparent,var(--amber),transparent)}
+.award-x{font-family:var(--display);font-weight:800;font-size:2.2rem;color:var(--amber);line-height:1}
+.award-t{font-size:.68rem;font-weight:700;letter-spacing:.16em;color:var(--mist);margin:8px 0 6px}
+.award-n{font-size:.88rem;font-weight:600;color:#fff;line-height:1.45}
 
 /* ---------- FAQ ---------- */
 .faq details{background:var(--white);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden}
@@ -223,7 +235,11 @@ footer p{margin-bottom:12px}
 @media(max-width:960px){
   .hero-grid,.register-grid{grid-template-columns:1fr}
   .hero-visual .ph{aspect-ratio:16/10}
-  .facts-grid,.dev-grid,.layout-grid{grid-template-columns:repeat(2,1fr)}
+  .facts-grid,.layout-grid{grid-template-columns:repeat(2,1fr)}
+  .dev-stats,.dev-awards{grid-template-columns:repeat(2,1fr)}
+  .dstat:nth-child(2){border-right:none}
+  .dstat{border-bottom:1px solid rgba(255,255,255,.14)}
+  .dstat:nth-child(3),.dstat:nth-child(4){border-bottom:none}
   .fac-grid{grid-template-columns:repeat(2,1fr)}
   .feature-row,.airbnb-grid{grid-template-columns:1fr;gap:28px}
   .feature-row.flip .feature-media{order:0}
@@ -233,6 +249,7 @@ footer p{margin-bottom:12px}
   .commute-track{grid-template-columns:repeat(2,1fr);row-gap:34px}
   .commute-track::before{display:none}
   .facts-grid,.layout-grid,.fac-grid{grid-template-columns:1fr}
+  .dev-awards{grid-template-columns:1fr}
   .airbnb .perk-grid{grid-template-columns:1fr}
   .wa-float{bottom:76px;width:52px;height:52px}
 }
@@ -340,7 +357,7 @@ footer p{margin-bottom:12px}
     <span class="eyebrow">Project Snapshot</span>
     <h2 class="section-title">Causewayz Square @ JBCC at a glance</h2>
     <div class="facts-grid">
-      <div class="fact"><div class="k">Freehold</div><div class="v">9-min walking distance to CIQ</div></div>
+      <div class="fact"><div class="k">Freehold</div><div class="v">Cover Link Bridge to CIQ &amp; RTS</div></div>
       <div class="fact"><div class="k">Foreigner Can Buy</div><div class="v">RM600,000 and above</div></div>
       <div class="fact"><div class="k">600m</div><div class="v">Walking distance to CIQ checkpoint</div></div>
       <div class="fact"><div class="k">90,000 sqft</div><div class="v">Retail podium — 40 units at your doorstep</div></div>
@@ -510,15 +527,40 @@ footer p{margin-bottom:12px}
 </section>
 
 <!-- Developer -->
-<section>
+<section class="dev">
   <div class="wrap">
-    <span class="eyebrow">The Developer</span>
+    <span class="eyebrow" style="color:var(--amber)">The Developer</span>
     <h2 class="section-title">Built by EXSIM — delivered as promised</h2>
-    <p class="section-sub">Since 2008, EXSIM has shaped skylines with sustainable, high-quality urban developments across Malaysia, with show-unit workmanship similarity of 90% and above.</p>
-    <div class="dev-grid">
-      <div class="dev-card"><div class="num">61+</div><div class="lbl">Successful projects delivered since 2008</div></div>
-      <div class="dev-card"><div class="num">FIABCI</div><div class="lbl">International Property Award winner</div></div>
-      <div class="dev-card"><div class="num">90%+</div><div class="lbl">Workmanship similarity — what you see is what you get</div></div>
+    <p class="section-sub">Established in 2008, EXSIM has shaped Malaysia's skylines under its founding philosophy of "New Age Ingenuity" — sustainable, ESG-driven developments recognised by the industry's highest honours, locally and internationally.</p>
+
+    <div class="dev-stats">
+      <div class="dstat"><div class="num">2008</div><div class="lbl">Established</div></div>
+      <div class="dstat"><div class="num">61+</div><div class="lbl">Projects delivered</div></div>
+      <div class="dstat"><div class="num">90%+</div><div class="lbl">Show-unit workmanship similarity</div></div>
+      <div class="dstat"><div class="num">6,000+</div><div class="lbl">Units under hospitality management</div></div>
+    </div>
+
+    <div class="dev-awards">
+      <div class="award">
+        <div class="award-x">2×</div>
+        <div class="award-t">WINNER</div>
+        <div class="award-n">FIABCI World Prix d'Excellence Awards</div>
+      </div>
+      <div class="award">
+        <div class="award-x">8×</div>
+        <div class="award-t">WINNER</div>
+        <div class="award-n">Malaysia Property Award™ by FIABCI-Malaysia</div>
+      </div>
+      <div class="award">
+        <div class="award-x">No.1</div>
+        <div class="award-t">MALAYSIA BOOK OF RECORDS</div>
+        <div class="award-n">Largest Short-Stay Management Company Chain 2025</div>
+      </div>
+      <div class="award">
+        <div class="award-x">✦</div>
+        <div class="award-t">CERTIFIED</div>
+        <div class="award-n">GreenRE Eco-Responsible Developer</div>
+      </div>
     </div>
   </div>
 </section>
