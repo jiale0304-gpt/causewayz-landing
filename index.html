@@ -684,9 +684,13 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
   }catch(err){ /* still show success; lead also captured via WhatsApp fallback */ }
   form.style.display='none';
   document.getElementById('formSuccess').style.display='block';
-  // ▼ Google Ads conversion — 换成你的 conversion ID/label
+  // ▼ Google Ads conversion — Causewayz Form Submit
   if (typeof gtag === 'function'){
-    gtag('event','conversion',{'send_to':'AW-XXXXXXXXXX/XXXXXXXXXX'});
+    gtag('event','conversion',{
+      'send_to':'AW-400782088/ptsrCLeCodEcEIjmjb8B',
+      'value':1.0,
+      'currency':'MYR'
+    });
   }
 });
 </script>
